@@ -15,6 +15,7 @@ return [
     |
     */
 
+    //'default' => env('DB_CONNECTION', 'mysql'),
     'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
@@ -91,6 +92,24 @@ return [
             'prefix_indexes' => true,
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
+        ],
+
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'url' => env('MONGO_URL'),
+            'host' => env('MONGO_HOST', 'localhost'),
+            'port' => env('MONGO_PORT', '27017'),
+            'database' => env('MONGO_DATABASE', 'forge'),
+            'username' => env('MONGO_USERNAME', 'forge'),
+            'password' => env('MONGO_PASSWORD', ''),
+            # 'dsn' => env('MONGO_URI',
+            # 'mongodb+srv://username:password@<atlas-cluster-uri>/myappdb?retryWrites=true&w=majority'),
+            'options' => [
+                // here you can pass more settings to the Mongo Driver Manager
+                // see https://www.php.net/manual/en/mongodb-driver-manager.construct.php under "Uri Options" for a list of complete parameters that you can use
+
+                'database' => env('DB_AUTHENTICATION_DATABASE', 'admin'), // required with Mongo 3+
+            ],
         ],
 
     ],

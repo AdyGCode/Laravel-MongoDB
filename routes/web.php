@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CollectorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('collectors', CollectorController::class);
+    Route::get('/collectors/{collector}/delete', [CollectorController::class, 'delete'])
+        ->name('collectors.delete');
+});
+require __DIR__ . '/auth.php';
