@@ -37,28 +37,6 @@ class CollectorsSeeder extends Seeder
                 ],
             ],
             [
-                "given_name" => "Izzy",
-                "family_name" => "Kidding",
-                "cars" => [
-                    "MOGAN-44",
-                    "ARIEL-ATOM4",
-                    "AUDI-S8",
-                ],
-            ],
-            [
-                "given_name" => "Fay",
-                "family_name" => "King",
-                "cars" => [
-                    "ARIEL-ATOM4",
-                    "MINI-CONV",
-                    "BMW-I",
-                    "VW-ARTEON",
-                    "VW-ARTEON",
-                    "ARIEL-ATOM4",
-                    "TESLA-MODX",
-                ],
-            ],
-            [
                 "given_name" => "Joe",
                 "family_name" => "King",
                 "cars" => [
@@ -72,23 +50,14 @@ class CollectorsSeeder extends Seeder
                 ],
             ],
             [
-                "given_name" => "Raney",
-                "family_name" => "Schauer",
+                "given_name" => "Harry",
+                "family_name" => "Beard",
                 "cars" => [
-                    "VW-AMAROK",
-                    "MG-HS",
-                    "BMW-M2",
-                ],
-            ],
-            [
-                "given_name" => "June",
-                "family_name" => "Schauer",
-                "cars" => [
-                    "MORGAN-ROADSTER",
-                    "MINI-3DH",
+                    "KTM-XBOWR",
+                    "TESLA-MODX",
                     "TESLA-MODY",
-                    "TESLA-MODY",
-                    "MINI-3DH",
+                    "BMW-M6",
+                    "KTM-XBOWR",
                 ],
             ],
             [
@@ -121,6 +90,17 @@ class CollectorsSeeder extends Seeder
                     "MG-MGZS",
                     "TESLA-TRUCK",
                     "ARIEL-ATOM4",
+                ],
+            ],
+            [
+                "given_name" => "June",
+                "family_name" => "Schauer",
+                "cars" => [
+                    "MORGAN-ROADSTER",
+                    "MINI-3DH",
+                    "TESLA-MODY",
+                    "TESLA-MODY",
+                    "MINI-3DH",
                 ],
             ],
             [
@@ -164,10 +144,27 @@ class CollectorsSeeder extends Seeder
                 ],
             ],
             [
+                "given_name" => "Cy",
+                "family_name" => "Yonarra",
+                "cars" => [
+                    "TESLA-MODX",
+                    "MG-MG3",
+                ],
+            ],
+            [
                 "given_name" => "Cary",
                 "family_name" => "Baggs",
                 "cars" => [
                     "MINI-CONV",
+                ],
+            ],
+            [
+                "given_name" => "Raney",
+                "family_name" => "Schauer",
+                "cars" => [
+                    "VW-AMAROK",
+                    "MG-HS",
+                    "BMW-M2",
                 ],
             ],
             [
@@ -186,28 +183,18 @@ class CollectorsSeeder extends Seeder
                 ],
             ],
             [
-                "given_name" => "Harry",
-                "family_name" => "Beard",
+                "given_name" => "Patty",
+                "family_name" => "Wagon",
                 "cars" => [
-                    "KTM-XBOWR",
-                    "TESLA-MODX",
-                    "TESLA-MODY",
-                    "BMW-M6",
-                    "KTM-XBOWR",
+                    "MINI-CONV",
+                    "MINI-CLUB",
+                    "BMW-1",
                 ],
             ],
             [
                 "given_name" => "Al B.",
                 "family_name" => "Zienya",
                 "cars" => [],
-            ],
-            [
-                "given_name" => "Cy",
-                "family_name" => "Yonarra",
-                "cars" => [
-                    "TESLA-MODX",
-                    "MG-MG3",
-                ],
             ],
             [
                 "given_name" => "Pearl E.",
@@ -231,12 +218,25 @@ class CollectorsSeeder extends Seeder
                 ],
             ],
             [
-                "given_name" => "Patty",
-                "family_name" => "Wagon",
+                "given_name" => "Izzy",
+                "family_name" => "Kidding",
                 "cars" => [
+                    "MOGAN-44",
+                    "ARIEL-ATOM4",
+                    "AUDI-S8",
+                ],
+            ],
+            [
+                "given_name" => "Fay",
+                "family_name" => "King",
+                "cars" => [
+                    "ARIEL-ATOM4",
                     "MINI-CONV",
-                    "MINI-CLUB",
-                    "BMW-1",
+                    "BMW-I",
+                    "VW-ARTEON",
+                    "VW-ARTEON",
+                    "ARIEL-ATOM4",
+                    "TESLA-MODX",
                 ],
             ],
             [
@@ -245,6 +245,10 @@ class CollectorsSeeder extends Seeder
                 "cars" => [],
             ],
         ];
+
+        /* Added shuffle to provide some 'disorder' to the collectors. */
+        shuffle($collectors);
+
         foreach ($collectors as $collector) {
             Collector::create($collector);
         }
